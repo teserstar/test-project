@@ -1,10 +1,6 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException
-import unittest, time, re
+from selenium.common.exceptions import *
+import unittest
 
 class Untitled(unittest.TestCase):
     def setUp(self):
@@ -14,7 +10,7 @@ class Untitled(unittest.TestCase):
         self.verificationErrors = []
         self.accept_next_alert = True
     
-    def test_untitled(self):
+    def test_login(self):
         driver = self.driver
         driver.get(self.base_url + "/php4dvd/")
         driver.find_element_by_id("username").clear()
